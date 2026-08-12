@@ -2,6 +2,7 @@ module.exports = app => {
   const contenidos = require("../controllers/controller.js");
   const { verifyToken } = require("../middlewares/authJwt.js");
   var router = require("express").Router();
+  const auth = require("../controllers/controller.js");
 
   router.post("/create/", contenidos.create);
 
@@ -14,13 +15,10 @@ module.exports = app => {
   router.delete("/delete/:id", contenidos.delete);
   router.delete("/delete/", contenidos.deleteAll);
 
-  app.use("/api/v1/parcial/contenido", router);
-  
-  const auth = require("../controllers/controller.js");
-  var router = require("express").Router();
 
   router.post("/signup", auth.signup);
   router.post("/signin", auth.signin);
+  
+  app.use("/api/v1/parcial/contenido", router);
 
-  app.use("/api/auth", router);
 };

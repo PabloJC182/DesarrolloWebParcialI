@@ -137,7 +137,7 @@ exports.findAllByTipo = (req, res) => {
     });
 };
 
-const config = require("../config/auth.config.js");
+const config = require("../auth/auth.config.js");
 const Usuario = db.usuarios;
 
 const bcrypt = require("bcryptjs");
@@ -174,8 +174,7 @@ exports.signin = (req, res) => {
       }
 
       const token = jwt.sign({ id: usuario.id }, config.secret, {
-        expiresIn: config.expiresIn // ej. "1h" — el token deja de ser válido después de este tiempo
-      });
+        expiresIn: config.expiresIn});
 
       res.status(200).send({
         id: usuario.id,

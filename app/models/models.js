@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const Contenido = sequelize.define("contenido", {
+  const Contenido = sequelize.define("contenido", {
     nombre: {
       type: Sequelize.STRING,
       allowNull: false
@@ -22,9 +22,11 @@ module.exports = (sequelize, Sequelize) => {
     },
     yearLanzamiento: {
       type: Sequelize.INTEGER
+    },
+    verifyToken: {
+      type: Sequelize.STRING
     }
   });
-  return Contenido;
 
   const Usuario = sequelize.define("usuario", {
     username: {
@@ -42,5 +44,9 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false
     }
   });
-  return Usuario;
+
+  return {
+    Contenido,
+    Usuario
+  };
 };

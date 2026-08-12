@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const authConfig = require("../config/auth.config.js");
+const authConfig = require("../auth/auth.config.js");
 
 verifyToken = (req, res, next) => {
   let token = req.headers["x-access-token"] || req.headers["authorization"];
