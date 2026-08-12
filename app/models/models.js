@@ -5,7 +5,7 @@ module.exports = (sequelize, Sequelize) => {
       allowNull: false
     },
     comentario: {
-      type: Sequelize.TEXT
+      type: Sequelize.STRING
     },
     actores: {
       type: Sequelize.STRING

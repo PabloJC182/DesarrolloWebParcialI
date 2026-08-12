@@ -1,5 +1,5 @@
 const db = require("../models");
-const Contenido = db.contenidos;
+const Contenido = db.contenido;
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
