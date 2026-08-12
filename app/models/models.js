@@ -25,4 +25,22 @@ module.exports = (sequelize, Sequelize) => {
     }
   });
   return Contenido;
+
+  const Usuario = sequelize.define("usuario", {
+    username: {
+      type: Sequelize.STRING,
+      unique: true,
+      allowNull: false
+    },
+    email: {
+      type: Sequelize.STRING,
+      unique: true,
+      allowNull: false
+    },
+    password: {
+      type: Sequelize.STRING,
+      allowNull: false
+    }
+  });
+  return Usuario;
 };
